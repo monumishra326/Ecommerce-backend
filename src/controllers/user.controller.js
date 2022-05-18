@@ -9,7 +9,7 @@ const router = express.Router();
 router.post("", async (req, res) => {
   try {
     let newUser = await User.create(req.body);
-
+  
     return res.status(201).send({ newUser });
   } catch (e) {
     return res.status(500).json({ status: "Failed", message: e.message });
